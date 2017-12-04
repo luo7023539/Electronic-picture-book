@@ -16,14 +16,6 @@ module.exports = {
           'vue-style-loader',
           'css-loader'
         ],
-      },      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-          }
-          // other vue-loader options go here
-        }
       },
       {
         test: /\.js$/,
@@ -40,14 +32,12 @@ module.exports = {
     ]
   },
   resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js'
-    },
-    extensions: ['*', '.js', '.vue', '.json']
+    alias: {},
+    extensions: ['*', '.js', '.json']
   },
   externals: {
     PIXI: 'PIXI'
-  },  
+  },
   devServer: {
     historyApiFallback: true,
     noInfo: true,
