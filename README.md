@@ -1,6 +1,6 @@
-# example1
+# Electronic picture book
 
-> A Vue.js project
+> 电子绘本
 
 ## Build Setup
 
