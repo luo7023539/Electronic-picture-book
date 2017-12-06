@@ -13,7 +13,7 @@ import TWEEN from '@tweenjs/tween.js'
 
 
 const scene = new Container()
-
+const MAX = Object.keys(scenes).length
 // 加载控件
 scene.init = function () {
   // 初始化场景
@@ -31,13 +31,15 @@ scene._defineProperty = function () {
       return this._current
     },
     set(newValue) {
+      if (newValue < 0 || newValue > MAX -1)
+        return;
       const duration = 1000;
       const to = -windowWidth * newValue;
       let start = this.position;
       this._current = newValue
       new TWEEN.Tween(start)
         .to({ x: to }, duration)
-        .easing(TWEEN.Easing.Quadratic.Out)
+        .easing(TWEEN.Easing.Quadratic.In)
         .start();
     }
   })
@@ -48,7 +50,7 @@ scene._setup = function () {
   const keys = Object.keys(scenes)
   keys.forEach((item, idx) => {
     const _scene = scenes[item]
-    _scene.x = -windowWidth * idx
+    _scene.x = windowWidth * idx
     _scene.init && _scene.init()
     this.addChild(_scene)
   })

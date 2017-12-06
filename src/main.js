@@ -6,7 +6,6 @@ import {
   windowWidth
 } from '@/constants';
 
-
 import stage from './stage'
 import scene from './scene'
 import TWEEN from '@tweenjs/tween.js'
@@ -16,10 +15,11 @@ import TWEEN from '@tweenjs/tween.js'
 const renderer = autoDetectRenderer(windowWidth, windowHeight);
 document.body.appendChild(renderer.view);
 
+const preload = new Array(2).fill(0).map((i, idx) => `assets/${++idx}.json`)
+
 loader
-  .add("assets/cat.png")
-  .add("assets/door.png")
-  .add("assets/dungeon.png")
+  .add("assets/widget.json")
+  .add(preload)
   .load(setup);
 
 let gameScene, state;
@@ -44,11 +44,11 @@ function animate(time) {
 }
 requestAnimationFrame(animate);
 
-function gameLoop(time) {
+function gameLoop() {
   //Loop this function 60 times per second
   requestAnimationFrame(gameLoop);
   
-  TWEEN.update(time);
+  TWEEN.update();
   //Update the current game state
   state();
 
