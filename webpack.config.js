@@ -13,13 +13,15 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'vue-style-loader',
           'css-loader'
         ],
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        options: {
+          presets: ["env", "stage-3","es2015"]
+        },
         exclude: /node_modules/
       },
       {
@@ -32,11 +34,13 @@ module.exports = {
     ]
   },
   resolve: {
-    alias: {},
-    extensions: ['*', '.js', '.json']
+    alias: {
+      "@": path.resolve(__dirname, './src')
+    },
+    extensions: ['.js', '.json']
   },
   externals: {
-    PIXI: 'PIXI'
+    // PIXI: 'PIXI'
   },
   devServer: {
     historyApiFallback: true,
