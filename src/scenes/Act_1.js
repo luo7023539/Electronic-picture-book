@@ -16,6 +16,22 @@ Act.init = () => {
   background.width = windowWidth;
   background.height = windowHeight;
   Act.addChild(background)
+
+  const RES = resources['scenes/cat.json'].textures;
+  let explosionTextures = [...RES], i;
+
+  for(let key in RES) {
+    if (RES.hasOwnProperty(key)) {
+      explosionTextures.push(RES[key])
+    }
+  }
+
+  var explosion = new PIXI.extras.AnimatedSprite(explosionTextures);
+
+  explosion.animationSpeed = .1
+  explosion.play()
+
+  Act.addChild(explosion)
 }
 
 export default Act

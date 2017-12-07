@@ -26,6 +26,7 @@ loader
   .add("assets/navigation.json")
   .add("assets/scenes-0.json")
   .add("assets/scenes-1.json")
+  .add("scenes/cat.json")
   .load(setup);
   
 
