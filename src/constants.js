@@ -13,6 +13,11 @@ const windowHeight = window.innerHeight,
   windowWidth = window.innerWidth;
 
 const screenScaleRito = windowWidth / 1024;
+
+const getTexture = (textureName) => {
+  return resources['assets/scenes-0.json'].textures[textureName] || resources['assets/scenes-1.json'].textures[textureName]
+}
+
 export {
-  PIXI, GOWN, Container, autoDetectRenderer, loader, resources, TextureCache, Texture, Sprite, Text, Graphics, windowHeight, windowWidth, ScrollContainer, LayoutGroup, layout, screenScaleRito
+  PIXI, GOWN, Container, autoDetectRenderer, loader, resources, TextureCache, Texture, Sprite, Text, Graphics, windowHeight, windowWidth, ScrollContainer, LayoutGroup, layout, screenScaleRito,getTexture
 }

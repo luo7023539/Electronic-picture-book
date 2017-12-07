@@ -3,19 +3,18 @@ import {
   Sprite,
   resources,
   windowWidth,
-  windowHeight
+  windowHeight,
+  getTexture
 } from '@/constants'
 
 const Act = new Container()
-
+// 挂载一个初始化场景方法
 Act.init = () => {
-  const RES = resources['assets/2.json'].textures;
-  const background = new Sprite(RES['backgroud2.png'])
+  const background = new Sprite(getTexture('2/backgroud2.png'))
 
   background.width = windowWidth;
   background.height = windowHeight;
   Act.addChild(background)
-
 }
 
 export default Act

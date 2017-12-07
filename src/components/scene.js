@@ -18,7 +18,7 @@ const MAX = Object.keys(scenes).length
 scene.init = function () {
   // 初始化场景
   // 索引
-  this._current = 0;
+  this._current = 14;
   this._setup()
   this._defineProperty()
 }

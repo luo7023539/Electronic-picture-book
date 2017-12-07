@@ -3,14 +3,15 @@ import {
   Sprite,
   resources,
   windowWidth,
-  windowHeight
+  windowHeight,
+  getTexture
 } from '@/constants'
 
 const Act = new Container()
 // 挂载一个初始化场景方法
 Act.init = () => {
-  const RES = resources['assets/1.json'].textures;
-  const background = new Sprite(RES['backgroud1.png'])
+  console.log(resources);
+  const background = new Sprite(getTexture('1/backgroud1.png'))
 
   background.width = windowWidth;
   background.height = windowHeight;

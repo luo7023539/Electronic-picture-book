@@ -18,15 +18,15 @@ const screenScaleRito = windowWidth / 1024
 const renderer = autoDetectRenderer(windowWidth, windowHeight);
 document.body.appendChild(renderer.view);
 
-const preload = new Array(2).fill(0).map((i, idx) => `assets/${++idx}.json`)
 
 new GOWN.ThemeParser("assets/shapes_desktop.json")
 
 loader
   .add("assets/widget.json")
   .add("assets/navigation.json")
-  .add(preload)
-  .load(setup);  
+  .add("assets/scenes-0.json")
+  .add("assets/scenes-1.json")
+  .load(setup);
   
 
 let gameScene, state;
