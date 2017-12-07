@@ -1,18 +1,18 @@
 const PIXI = require('pixi.js');
+const GOWN = require('gown')
 
-const Container = PIXI.Container,
-  autoDetectRenderer = PIXI.autoDetectRenderer,
-  loader = PIXI.loader,
-  resources = PIXI.loader.resources,
-  TextureCache = PIXI.utils.TextureCache,
-  Texture = PIXI.Texture,
-  Sprite = PIXI.Sprite,
-  Text = PIXI.Text,
-  Graphics = PIXI.Graphics;
+const { ScrollContainer, LayoutGroup, layout } = GOWN
+
+const { Container, autoDetectRenderer, loader, Texture, Sprite, Text, utils, Graphics } = PIXI;
+
+const resources = loader.resources,
+  TextureCache = utils.TextureCache;
+
 
 const windowHeight = window.innerHeight,
   windowWidth = window.innerWidth;
 
+const screenScaleRito = windowWidth / 1024;
 export {
-  Container, autoDetectRenderer, loader, resources, TextureCache, Texture, Sprite, Text, Graphics, windowHeight, windowWidth
+  PIXI, GOWN, Container, autoDetectRenderer, loader, resources, TextureCache, Texture, Sprite, Text, Graphics, windowHeight, windowWidth, ScrollContainer, LayoutGroup, layout, screenScaleRito
 }

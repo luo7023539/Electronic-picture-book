@@ -7,7 +7,7 @@ import {
   windowWidth
 } from '@/constants';
 
-import scene from '../scene'
+import scene from '@/components/scene'
 const widgets = new Container()
 
 widgets.init = function () {
@@ -21,11 +21,12 @@ widgets.init = function () {
   start.x = 204
   pause.x = 204
 
-  const handleLeft = () => {
+  const handleLeft = (ev) => {
+    console.log(ev);
     scene.current--
   }
 
-  const handleRight = () => {
+  const handleRight = (ev) => {
     scene.current++
   }
 
@@ -40,7 +41,10 @@ widgets.init = function () {
   buttonRight
     .on('pointerdown', handleRight)
 
-
+  widgets.interactive = true;
+  widgets.on('pointerdown', (ev) => {
+    ev.stopped = true;
+  })
   widgets.addChild(buttonLeft, start, pause, buttonRight)
 }
 

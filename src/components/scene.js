@@ -7,8 +7,8 @@ import {
   windowWidth
 } from '@/constants';
 
-import stage from './stage'
-import * as scenes from './scenes'
+import stage from '@/components/stage'
+import * as scenes from '@/scenes'
 import TWEEN from '@tweenjs/tween.js'
 
 

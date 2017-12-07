@@ -1,4 +1,5 @@
 import {
+  GOWN,
   Container,
   autoDetectRenderer,
   loader,
@@ -6,21 +7,27 @@ import {
   windowWidth
 } from '@/constants';
 
-import stage from './stage'
-import scene from './scene'
+import stage from '@/components/stage'
+import scene from '@/components/scene'
 import TWEEN from '@tweenjs/tween.js'
 
 //Create a Pixi stage and renderer and add the 
 //renderer.view to the DOM
+const screenScaleRito = windowWidth / 1024
+
 const renderer = autoDetectRenderer(windowWidth, windowHeight);
 document.body.appendChild(renderer.view);
 
 const preload = new Array(2).fill(0).map((i, idx) => `assets/${++idx}.json`)
 
+new GOWN.ThemeParser("assets/shapes_desktop.json")
+
 loader
   .add("assets/widget.json")
+  .add("assets/navigation.json")
   .add(preload)
-  .load(setup);
+  .load(setup);  
+  
 
 let gameScene, state;
 //Define variables that might be used in more 
@@ -36,6 +43,8 @@ function setup() {
   //Make the blobs
   state = play;
   //Start the game loop
+  renderer.resize(windowWidth, windowHeight);
+
   gameLoop();
 }
 
