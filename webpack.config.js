@@ -2,11 +2,15 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/main.js',
+  entry: {
+    main: './src/main.js',
+    vendor: ['pixi.js', 'gown']
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js'
+    filename: '[name].js',
+    chunkFilename: '[id].[chunkhash].js'
   },
   module: {
     rules: [
@@ -20,7 +24,7 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         options: {
-          presets: ["env", "stage-3","es2015"]
+          presets: ["env", "stage-3", "es2015"]
         },
         exclude: /node_modules/
       },
@@ -50,7 +54,22 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: function (module) {
+        // any required modules inside node_modules are extracted to vendor
+        return (
+          module.resource &&
+          /\.js$/.test(module.resource) &&
+          module.resource.indexOf(
+            path.join(__dirname, '../node_modules')
+          ) === 0
+        )
+      }
+    })
+  ]
 }
 
 if (process.env.NODE_ENV === 'production') {

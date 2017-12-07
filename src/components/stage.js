@@ -31,8 +31,8 @@ stage.init = () => {
   stage.interactive = true;
   
   stage.on('pointerdown', (ev) => {
-    console.log('stage');
-    console.log(ev);
+    // console.log('stage');
+    // console.log(ev);
   })
 
 }
