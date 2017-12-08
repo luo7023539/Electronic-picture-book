@@ -33,16 +33,16 @@ widgets.init = function () {
   buttonLeft.buttonMode = true;
   buttonLeft.interactive = true;
   buttonLeft
-    .on('pointerdown', handleLeft)
+    .on('touchend', handleLeft)
 
   buttonRight.buttonMode = true;
   buttonRight.interactive = true;
   buttonRight.x = 408;
   buttonRight
-    .on('pointerdown', handleRight)
+    .on('touchend', handleRight)
 
   widgets.interactive = true;
-  widgets.on('pointerdown', (ev) => {
+  widgets.on('touchend', (ev) => {
     ev.stopped = true;
   })
   widgets.addChild(buttonLeft, start, pause, buttonRight)

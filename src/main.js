@@ -1,6 +1,7 @@
 import {
   GOWN,
   Container,
+  TWEEN,
   autoDetectRenderer,
   loader,
   windowHeight,
@@ -9,7 +10,6 @@ import {
 
 import stage from '@/components/stage'
 import scene from '@/components/scene'
-import TWEEN from '@tweenjs/tween.js'
 
 //Create a Pixi stage and renderer and add the 
 //renderer.view to the DOM
@@ -49,10 +49,6 @@ function setup() {
   gameLoop();
 }
 
-function animate(time) {
-  requestAnimationFrame(animate);
-}
-requestAnimationFrame(animate);
 
 function gameLoop() {
   //Loop this function 60 times per second

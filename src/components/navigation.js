@@ -7,7 +7,8 @@ import {
   resources,
   windowHeight,
   windowWidth,
-  screenScaleRito
+  screenScaleRito,
+  TWEEN
 } from '@/constants';
 
 import scene from '@/components/scene'
@@ -38,8 +39,9 @@ navigation.init = function () {
     _Thumbnails.buttonMode = true
     layoutGroup.addChild(_Thumbnails)
   }
-
   this.event()
+  this.wrap = wrap
+  this.Thumbnails = Thumbnails
   navigation.addChild(wrap, Thumbnails)
 }
 
@@ -48,14 +50,29 @@ navigation.event = function () {
   this.interactive = true
   this
     .on('touchstart', ev => {
+      // ev.stopped = true
       cache = Object.assign({}, ev.data.global)
     })
     .on('touchend', ev => {
-      let posi  = ev.data.global;
-      if (Math.abs(posi.x - cache.x) < 15 && Math.abs(posi.y - cache.y) < 15) {
-        scene.current = ev.target._to
+      // ev.stopped = true
+      const target = ev.target
+      if (target.pluginName === 'sprite') {
+        let posi = ev.data.global;
+        if (Math.abs(posi.x - cache.x) < 15 && Math.abs(posi.y - cache.y) < 15) {
+          scene.current = ev.target._to
+        }
       }
     })
+}
+
+navigation.slide = function (to) {
+  const nH = this.height
+  const start= this.position
+  new TWEEN.Tween(start)
+    .to({
+      y: to === 'up' ? -nH : 0
+    }, 300)
+    .start();
 }
 
 export default navigation
