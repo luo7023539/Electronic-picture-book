@@ -5,7 +5,8 @@ import {
   resources,
   windowWidth,
   screenScaleRitoX,
-  screenScaleRitoY
+  screenScaleRitoY,
+  c
 } from '@/constants';
 
 import stage from '@/components/stage'
@@ -56,6 +57,7 @@ scene._setup = function () {
     _scene.init && _scene.init()
     this.addChild(_scene)
   })
+  scene.x = -9 * windowWidth
 }
 
 export default scene 

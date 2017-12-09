@@ -8,6 +8,7 @@ import {
   windowHeight,
   windowWidth,
   screenScaleRitoX,
+  screenScaleRitoY,
   TWEEN,
   c
 } from '@/constants';
