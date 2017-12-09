@@ -12,9 +12,11 @@ const Act = new Container()
 Act.init = () => {
   const background = new Sprite(getTexture('6/backgroud6.png'))
 
-  background.width = windowWidth;
-  background.height = windowHeight;
-  Act.addChild(background)
+  const person1 = new Sprite(getTexture('6/6-1.png'))
+  const person2 = new Sprite(getTexture('6/6-2.png'))
+  
+
+  Act.addChild(background, person1, person2)
 }
 
 export default Act

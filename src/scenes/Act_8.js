@@ -12,9 +12,13 @@ const Act = new Container()
 Act.init = () => {
   const background = new Sprite(getTexture('8/backgroud8.png'))
 
-  background.width = windowWidth;
-  background.height = windowHeight;
-  Act.addChild(background)
+  const hand = new Sprite(getTexture('8/8-1.png'))
+  const flower = new Sprite(getTexture('8/8-2.png'))
+  const rain = new Sprite(getTexture('8/8-2-rain.png'))
+  const cloud = new Sprite(getTexture('8/8-3-cloud.png'))
+
+  Act.addChild(background, hand, flower, cloud)
+
 }
 
 export default Act

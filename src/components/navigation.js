@@ -7,19 +7,20 @@ import {
   resources,
   windowHeight,
   windowWidth,
-  screenScaleRito,
-  TWEEN
+  screenScaleRitoX,
+  TWEEN,
+  c
 } from '@/constants';
 
 import scene from '@/components/scene'
 const navigation = new Container()
 
 navigation.init = function () {
-  const originX = 50 * screenScaleRito, originY = 5 * screenScaleRito, width = 130 * screenScaleRito, height = 130 * screenScaleRito, gap = 20 * screenScaleRito;
+  const originX = 50 * screenScaleRitoX, originY = 5 * screenScaleRitoX, width = 130 * screenScaleRitoX, height = 130 * screenScaleRitoX, gap = 20 * screenScaleRitoX;
   const RES = resources['assets/navigation.json'].textures
   const wrap = new Sprite(RES['navigation.png'])
 
-  wrap.scale.set(screenScaleRito, screenScaleRito)
+  wrap.scale.set(screenScaleRitoX, screenScaleRitoX)
   const Thumbnails = new ScrollContainer();
   const layoutGroup = new LayoutGroup();
   layoutGroup.layout = new layout.HorizontalLayout();
@@ -28,7 +29,7 @@ navigation.init = function () {
   Thumbnails.y = originY
   Thumbnails.viewPort = layoutGroup
   Thumbnails.height = wrap.height;
-  Thumbnails.width = wrap.width - 105 * screenScaleRito;
+  Thumbnails.width = wrap.width - 105 * screenScaleRitoX;
 
   for (let i = 0; i < 16; i++) {
     const _Thumbnails = new Sprite(RES['1.jpg'])
@@ -66,13 +67,7 @@ navigation.event = function () {
 }
 
 navigation.slide = function (to) {
-  const nH = this.height
-  const start= this.position
-  new TWEEN.Tween(start)
-    .to({
-      y: to === 'up' ? -nH : 0
-    }, 300)
-    .start();
+  c.slide(navigation, 0, to === 'up' ? -this.height : 0)
 }
 
 export default navigation

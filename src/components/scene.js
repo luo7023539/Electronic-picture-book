@@ -3,8 +3,9 @@ import {
   loader,
   Sprite,
   resources,
-  windowHeight,
-  windowWidth
+  windowWidth,
+  screenScaleRitoX,
+  screenScaleRitoY
 } from '@/constants';
 
 import stage from '@/components/stage'
@@ -51,6 +52,7 @@ scene._setup = function () {
   keys.forEach((item, idx) => {
     const _scene = scenes[item]
     _scene.x = windowWidth * idx
+    _scene.scale.set(screenScaleRitoX,screenScaleRitoY)
     _scene.init && _scene.init()
     this.addChild(_scene)
   })

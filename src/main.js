@@ -5,7 +5,8 @@ import {
   autoDetectRenderer,
   loader,
   windowHeight,
-  windowWidth
+  windowWidth,
+  c
 } from '@/constants';
 
 import stage from '@/components/stage'
@@ -28,7 +29,7 @@ loader
   .add("assets/scenes-1.json")
   .add("scenes/cat.json")
   .load(setup);
-  
+
 
 let gameScene, state;
 //Define variables that might be used in more 
@@ -44,7 +45,6 @@ function setup() {
   //Make the blobs
   state = play;
   //Start the game loop
-  renderer.resize(windowWidth, windowHeight);
 
   gameLoop();
 }
@@ -53,7 +53,7 @@ function setup() {
 function gameLoop() {
   //Loop this function 60 times per second
   requestAnimationFrame(gameLoop);
-  
+  c.update()
   TWEEN.update();
   //Update the current game state
   state();
@@ -65,3 +65,12 @@ function gameLoop() {
 function play() {
   // stage.x += 1
 }
+
+window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function () {
+  /**
+   * 锁定横屏
+   */
+  console.log(window.innerWidth, window.innerHeight)
+  console.log(windowWidth, windowHeight);
+}, false);
+
