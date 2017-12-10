@@ -63,6 +63,7 @@ function gameLoop() {
 }
 
 function play() {
+  // 
   // stage.x += 1
 }
 
