@@ -6,7 +6,7 @@ import {
   loader,
   windowHeight,
   windowWidth,
-  c
+  c 
 } from '@/constants';
 
 import stage from '@/components/stage'

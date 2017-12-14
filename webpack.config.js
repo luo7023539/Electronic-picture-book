@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var Visualizer = require('webpack-visualizer-plugin');
 
 module.exports = {
   entry: {
@@ -26,7 +27,11 @@ module.exports = {
         options: {
           presets: ["env", "stage-3", "es2015"]
         },
-        exclude: /node_modules/
+        // exclude: /node_modules/
+        include: [
+          // 只去解析运行目录下的 src 和 demo 文件夹
+          path.join(process.cwd(), './src'),
+        ]
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -40,6 +45,7 @@ module.exports = {
   resolve: {
     alias: {
       "@": path.resolve(__dirname, './src'),
+      // "pixi.js": "pixi.js/dist/pixi.min.js"
     },
     extensions: ['.js', '.json']
   },
@@ -68,6 +74,9 @@ module.exports = {
           ) === 0
         )
       }
+    }),
+    new Visualizer({
+      filename: './stats.html'
     })
   ]
 }
