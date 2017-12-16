@@ -1,6 +1,8 @@
 var path = require('path')
 var webpack = require('webpack')
-var Visualizer = require('webpack-visualizer-plugin');
+var ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
+var Visualizer = require('webpack-visualizer-plugin')
+var resolve = dir => path.join(__dirname, dir)
 
 module.exports = {
   entry: {
@@ -45,12 +47,12 @@ module.exports = {
   resolve: {
     alias: {
       "@": path.resolve(__dirname, './src'),
-      // "pixi.js": "pixi.js/dist/pixi.min.js"
+      // "pixi.js$": "pixi.js/dist/pixi.min.js"
     },
+    modules: [
+      resolve('node_modules')
+    ],
     extensions: ['.js', '.json']
-  },
-  externals: {
-    // PIXI: 'PIXI'
   },
   devServer: {
     historyApiFallback: true,
@@ -75,9 +77,6 @@ module.exports = {
         )
       }
     }),
-    new Visualizer({
-      filename: './stats.html'
-    })
   ]
 }
 
@@ -90,10 +89,21 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
+    // new webpack.optimize.UglifyJsPlugin({
+    //   // sourceMap: true,
+    //   compress: {
+    //     warnings: false
+    //   }
+    // }),
+    new ParallelUglifyPlugin({
+      cacheDir: '.cache/',
+      uglifyJS:{
+        output: {
+          comments: false
+        },
+        compress: {
+          warnings: false
+        }
       }
     }),
     new webpack.LoaderOptionsPlugin({
