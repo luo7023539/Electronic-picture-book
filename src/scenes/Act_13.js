@@ -4,7 +4,8 @@ import {
   resources,
   windowWidth,
   windowHeight,
-  getTexture
+  getTexture,
+  createText
 } from '@/constants'
 
 const Act = new Container()
@@ -17,7 +18,15 @@ Act.init = () => {
 
   person.x = 220
   person.y = 310
-  Act.addChild(background, person, cloud1, cloud2)
+
+  const richText = createText("我有一个愿望！\
+  也许是神仙住的太远了，没有听到我的声音")
+
+  // richText.width = 500
+  richText.x = 519;
+  richText.y = 546;
+
+  Act.addChild(background, person, cloud1, cloud2, richText)
 }
 
 export default Act

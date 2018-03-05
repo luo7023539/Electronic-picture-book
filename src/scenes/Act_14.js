@@ -4,7 +4,8 @@ import {
   resources,
   windowWidth,
   windowHeight,
-  getTexture
+  getTexture,
+  createText
 } from '@/constants'
 
 const Act = new Container()
@@ -15,7 +16,13 @@ Act.init = () => {
   const person = new Sprite(getTexture('14/14-1.png'))
   const moon = new Sprite(getTexture('14/14-moon.png'))
 
-  Act.addChild(background, person, moon)
+  const richText = createText("所以我就跑到奶奶家后面的小山坡上大喊")
+
+  // richText.width = 500
+  richText.x = 581;
+  richText.y = 636;
+  
+  Act.addChild(background, person, moon, richText)
 }
 
 export default Act

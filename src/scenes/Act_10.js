@@ -8,6 +8,7 @@ import {
   windowHeight,
   windowWidth,
   getTexture,
+  createText,
   c
 } from '@/constants';
 
@@ -36,9 +37,15 @@ Act.init = () => {
   scrollContainer.viewPort = layoutGroup
   scrollContainer.width = windowWidth 
   scrollContainer.height = windowHeight 
-  
 
-  Act.addChild(scrollContainer)
+  console.log(scrollContainer);
+  var richText = createText("我们一起上课，画画，玩游戏……但是……");
+
+  // richText.width = 500
+  richText.x = 264;
+  richText.y = 703;
+
+  Act.addChild(scrollContainer, richText)
 }
 
 export default Act

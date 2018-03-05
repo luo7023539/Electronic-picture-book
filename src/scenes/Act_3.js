@@ -15,12 +15,14 @@ Act.init = () => {
   const star_drak = new Sprite(getTexture('3/star_drak.png'))
   const star_light = new Sprite(getTexture('3/star_light.png'))
 
-  const richText = createText("之后我就常常对着窗户外面\
-  悄悄地向神仙许愿");
+  const richText = createText("也许是因为我的声音太小了\
+  爸爸妈妈每次只在我的梦里出现\
+  醒来就又剩我一个人\
+  ");
 
   // richText.width = 500
-  richText.x = 510;
-  richText.y = 410;
+  richText.x = 520;
+  richText.y = 630;
 
 
   Act.addChild(background, person1, person2, star_drak, star_light, richText)

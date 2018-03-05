@@ -67,7 +67,7 @@ scene._setup = function () {
   scene.x = -9 * windowWidth
 
   window.setTimeout(() => {
-    scene.x = 0
+    scene.x = -9 * windowWidth
   }, 0)
 }
 
