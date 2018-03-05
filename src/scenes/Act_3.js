@@ -2,9 +2,8 @@ import {
   Container,
   Sprite,
   resources,
-  windowWidth,
-  windowHeight,
-  getTexture
+  getTexture,
+  createText
 } from '@/constants'
 
 const Act = new Container()
@@ -16,7 +15,15 @@ Act.init = () => {
   const star_drak = new Sprite(getTexture('3/star_drak.png'))
   const star_light = new Sprite(getTexture('3/star_light.png'))
 
-  Act.addChild(background, person1, person2, star_drak, star_light)
+  const richText = createText("之后我就常常对着窗户外面\
+  悄悄地向神仙许愿");
+
+  // richText.width = 500
+  richText.x = 510;
+  richText.y = 410;
+
+
+  Act.addChild(background, person1, person2, star_drak, star_light, richText)
 }
 
 export default Act

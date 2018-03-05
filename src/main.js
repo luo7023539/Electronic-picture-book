@@ -14,7 +14,6 @@ import scene from '@/components/scene'
 
 //Create a Pixi stage and renderer and add the 
 //renderer.view to the DOM
-const screenScaleRito = windowWidth / 1024
 
 const renderer = autoDetectRenderer(windowWidth, windowHeight);
 document.body.appendChild(renderer.view);

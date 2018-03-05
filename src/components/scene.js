@@ -33,9 +33,9 @@ scene._defineProperty = function () {
       return this._current
     },
     set(newValue) {
-      if (newValue < 0 || newValue > MAX -1)
+      if (newValue < 0 || newValue > MAX - 1)
         return;
-      const duration = 1000;
+      const duration = 1024;
       const to = -windowWidth * newValue;
       let start = this.position;
       this._current = newValue
@@ -53,11 +53,22 @@ scene._setup = function () {
   keys.forEach((item, idx) => {
     const _scene = scenes[item]
     _scene.x = windowWidth * idx
-    _scene.scale.set(screenScaleRitoX,screenScaleRitoY)
+    _scene.scale.set(screenScaleRitoX, screenScaleRitoY)
     _scene.init && _scene.init()
     this.addChild(_scene)
   })
+  
+  /**
+   * 未知BUG
+   * 需要初始化至第10页
+   * 否则滚动容器不可见
+   * 2018.3.5
+   */
   scene.x = -9 * windowWidth
+
+  window.setTimeout(() => {
+    scene.x = 0
+  }, 0)
 }
 
 export default scene 

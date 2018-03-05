@@ -5,6 +5,7 @@ import {
   windowWidth,
   windowHeight,
   getTexture,
+  createText,
   c
 } from '@/constants'
 
@@ -37,7 +38,19 @@ Act.init = () => {
     1000                          //Delay in milliseconds between segments
   );
 
-  Act.addChild(background, person, moon, action)
+  var richText = createText("有一天，奶奶和我在院子里看月亮\
+  我指着月亮说它弯弯地像奶奶的眉毛\
+  奶奶连忙捂住我的耳朵\
+  “可不敢用手指月亮，当心晚上来割你的小耳朵！”\
+  吓得我都不敢看它了\
+  奶奶说月亮上住的神仙呢\
+  每当星星挂满天空，只要对着它许愿，愿望就能实现");
+
+  // richText.width = 500
+  richText.x = 510;
+  richText.y = 410;
+
+  Act.addChild(background, person, moon, action, richText)
 }
 
 export default Act

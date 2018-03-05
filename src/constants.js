@@ -4,6 +4,20 @@ const PIXI = require('pixi.js')
 const GOWN = require('gown')
 const c = new Charm(PIXI)
 
+const textStyle = new PIXI.TextStyle({
+  fontFamily: 'Arial',
+  fontSize: 18,
+  fontStyle: 'italic',
+  fontWeight: 'normal',
+  fill: '#fff',
+  dropShadow: true,
+  dropShadowColor: '#62240f',
+  dropShadowBlur: 1,
+  dropShadowAngle: Math.PI / 6,
+  dropShadowDistance: 2,
+  wordWrap: true,
+  wordWrapWidth: 50
+});
 
 const { ScrollContainer, LayoutGroup, layout } = GOWN
 
@@ -23,6 +37,10 @@ const NaviSlideDistance = 50;
 
 const getTexture = (textureName) => {
   return resources['assets/scenes-0.json'].textures[textureName] || resources['assets/scenes-1.json'].textures[textureName]
+}
+
+const createText = (text) => {
+  return new PIXI.Text(text , textStyle)
 }
 
 function detectOrient() {
@@ -63,5 +81,5 @@ window.addEventListener("onorientationchange" in window ? "orientationchange" : 
 
 export {
   PIXI, GOWN, TWEEN, Container, autoDetectRenderer, loader, resources, TextureCache, Texture, Sprite, Text, Graphics, windowHeight, windowWidth, ScrollContainer, LayoutGroup, layout, screenScaleRitoX, screenScaleRitoY, getTexture,
-  NaviSlideDistance,c
+  NaviSlideDistance,c, createText
 }

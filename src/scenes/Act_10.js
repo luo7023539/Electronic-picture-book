@@ -7,8 +7,6 @@ import {
   resources,
   windowHeight,
   windowWidth,
-  screenScaleRitoX,
-  screenScaleRitoY,
   getTexture,
   c
 } from '@/constants';
@@ -16,6 +14,7 @@ import {
 const Act = new Container()
 // 挂载一个初始化场景方法
 Act.init = () => {
+  console.log('Scene 10 Init');
   const person1 = new Sprite(getTexture('10/10-1.png'))
   const person2 = new Sprite(getTexture('10/10-2.png'))
   const person3 = new Sprite(getTexture('10/10-3.png'))
@@ -33,9 +32,8 @@ Act.init = () => {
   layoutGroup.addChild(person2)
   layoutGroup.addChild(person3)
   
-  scrollContainer.interactive = false
+  // scrollContainer.interactive = false
   scrollContainer.viewPort = layoutGroup
-  layoutGroup.scale.set(screenScaleRitoX, screenScaleRitoY)
   scrollContainer.width = windowWidth 
   scrollContainer.height = windowHeight 
   
