@@ -27,27 +27,6 @@ Act.init = () => {
   奶奶说月亮上住的神仙呢\
   每当星星挂满天空，只要对着它许愿，愿望就能实现");
 
-  // const action = new Sprite(getTexture('1/moon01.png'))
-
-  // let curvedWaypoints = [
-
-  //   //First curve
-  //   [[action.x, action.y], [75, 500], [200, 500], [300, 300]],
-
-  //   //Second curve
-  //   [[300, 300], [250, 100], [100, 100], [action.x, action.y]]
-  // ];
-
-  // let spritePath = c.walkCurve(
-  //   action,                    //The sprite
-  //   curvedWaypoints,              //Array of curved waypoints
-  //   300,                          //Total duration, in frames
-  //   "smoothstep",                 //Easing type
-  //   true,                         //Should the path loop?
-  //   true,                         //Should the path yoyo?
-  //   1000                          //Delay in milliseconds between segments
-  // );
-
   richText.x = 510;
   richText.y = 410;
 

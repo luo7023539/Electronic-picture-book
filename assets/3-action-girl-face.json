@@ -1,0 +1,100 @@
+{"frames": {
+
+"girl_face_00052.png":
+{
+	"frame": {"x":1,"y":1,"w":381,"h":548},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":220,"w":381,"h":548},
+	"sourceSize": {"w":1024,"h":768}
+},
+"girl_face_00053.png":
+{
+	"frame": {"x":384,"y":1,"w":381,"h":548},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":220,"w":381,"h":548},
+	"sourceSize": {"w":1024,"h":768}
+},
+"girl_face_00054.png":
+{
+	"frame": {"x":1,"y":551,"w":381,"h":548},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":220,"w":381,"h":548},
+	"sourceSize": {"w":1024,"h":768}
+},
+"girl_face_00055.png":
+{
+	"frame": {"x":384,"y":551,"w":381,"h":548},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":220,"w":381,"h":548},
+	"sourceSize": {"w":1024,"h":768}
+},
+"girl_face_00056.png":
+{
+	"frame": {"x":1,"y":1101,"w":381,"h":548},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":220,"w":381,"h":548},
+	"sourceSize": {"w":1024,"h":768}
+},
+"girl_face_00057.png":
+{
+	"frame": {"x":384,"y":1101,"w":381,"h":548},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":220,"w":381,"h":548},
+	"sourceSize": {"w":1024,"h":768}
+},
+"girl_face_00058.png":
+{
+	"frame": {"x":1,"y":1651,"w":381,"h":548},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":220,"w":381,"h":548},
+	"sourceSize": {"w":1024,"h":768}
+},
+"girl_face_00059.png":
+{
+	"frame": {"x":384,"y":1651,"w":381,"h":548},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":220,"w":381,"h":548},
+	"sourceSize": {"w":1024,"h":768}
+},
+"girl_face_00060.png":
+{
+	"frame": {"x":1,"y":2201,"w":381,"h":548},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":220,"w":381,"h":548},
+	"sourceSize": {"w":1024,"h":768}
+},
+"girl_face_00061.png":
+{
+	"frame": {"x":384,"y":2201,"w":381,"h":548},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":220,"w":381,"h":548},
+	"sourceSize": {"w":1024,"h":768}
+},
+"girl_face_00062.png":
+{
+	"frame": {"x":1,"y":2751,"w":381,"h":548},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":220,"w":381,"h":548},
+	"sourceSize": {"w":1024,"h":768}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "3-action-girl-face.png",
+	"format": "RGBA8888",
+	"size": {"w":766,"h":3300},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:807b5f0eae7884d1fdf04c6e7e9d3a5a:a8c5980e2aaccd82acbc783c06a95a31:f763f4c30e4f35f6dee94a251d4f3ed1$"
+}
+}

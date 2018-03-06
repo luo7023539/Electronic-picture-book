@@ -1,0 +1,164 @@
+{"frames": {
+
+"backgroud3_00017.png":
+{
+	"frame": {"x":1,"y":1,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+},
+"backgroud3_00018.png":
+{
+	"frame": {"x":872,"y":1,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+},
+"backgroud3_00019.png":
+{
+	"frame": {"x":1743,"y":1,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+},
+"backgroud3_00020.png":
+{
+	"frame": {"x":2614,"y":1,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+},
+"backgroud3_00021.png":
+{
+	"frame": {"x":1,"y":750,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+},
+"backgroud3_00022.png":
+{
+	"frame": {"x":1,"y":1499,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+},
+"backgroud3_00023.png":
+{
+	"frame": {"x":1,"y":2248,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+},
+"backgroud3_00024.png":
+{
+	"frame": {"x":1,"y":2997,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+},
+"backgroud3_00025.png":
+{
+	"frame": {"x":872,"y":750,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+},
+"backgroud3_00026.png":
+{
+	"frame": {"x":1743,"y":750,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+},
+"backgroud3_00027.png":
+{
+	"frame": {"x":2614,"y":750,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+},
+"backgroud3_00028.png":
+{
+	"frame": {"x":872,"y":1499,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+},
+"backgroud3_00029.png":
+{
+	"frame": {"x":872,"y":2248,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+},
+"backgroud3_00030.png":
+{
+	"frame": {"x":872,"y":2997,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+},
+"backgroud3_00031.png":
+{
+	"frame": {"x":1743,"y":1499,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+},
+"backgroud3_00032.png":
+{
+	"frame": {"x":2614,"y":1499,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+},
+"backgroud3_00033.png":
+{
+	"frame": {"x":1743,"y":2248,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+},
+"backgroud3_00034.png":
+{
+	"frame": {"x":1743,"y":2997,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+},
+"backgroud3_00035.png":
+{
+	"frame": {"x":2614,"y":2248,"w":869,"h":747},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":0,"w":869,"h":747},
+	"sourceSize": {"w":1024,"h":768}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "3-action-girl-hand.png",
+	"format": "RGBA8888",
+	"size": {"w":3484,"h":3745},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:6ab25b0c3a45532a910fe0e0ce5eb8f2:b34b35d8c8ab755962c851d1535a1101:bc6c8361ada0e1065e494a17d09ab480$"
+}
+}

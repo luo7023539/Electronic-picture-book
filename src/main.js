@@ -1,12 +1,12 @@
 import {
-  GOWN,
+GOWN,
   Container,
   TWEEN,
   autoDetectRenderer,
   loader,
   windowHeight,
   windowWidth,
-  c 
+  c
 } from '@/constants';
 
 import stage from '@/components/stage'
@@ -34,7 +34,16 @@ loader
     "assets/1-1-action-3.json",
   ])
   .add("assets/2-1-action.json")
-  
+  .add([
+    "assets/3-action-star-light.json",
+    "assets/3-action-star-dark.json",
+    "assets/3-action-dream-hide-0.json",
+    "assets/3-action-dream-hide-1.json",
+    "assets/3-action-dream-show.json",
+    "assets/3-action-girl-face.json",
+    "assets/3-action-girl-hand.json"
+  ])
+
   .load(setup);
 
 
