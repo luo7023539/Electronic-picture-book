@@ -33,6 +33,8 @@ loader
     "assets/1-1-action-2.json",
     "assets/1-1-action-3.json",
   ])
+  .add("assets/2-1-action.json")
+  
   .load(setup);
 
 

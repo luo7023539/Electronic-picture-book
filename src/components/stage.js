@@ -89,9 +89,6 @@ stage.event = function () {
     isTopContent = isBottomContent = false
   })
 
-
-
-
 }
 
 export default stage

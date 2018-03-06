@@ -63,8 +63,10 @@ const createAnimateSprite = (texture_id) => {
       }
     }
   }
-  
-  return new PIXI.extras.AnimatedSprite(explosionTextures);
+  const sprite = new PIXI.extras.AnimatedSprite(explosionTextures)
+  sprite.loop = false
+  sprite.animationSpeed = .2
+  return sprite;
 }
 
 function detectOrient() {

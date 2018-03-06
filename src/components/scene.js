@@ -60,6 +60,12 @@ scene._setup = function () {
     _scene.init && _scene.init()
     this._scenes.push(_scene)
     this.addChild(_scene)
+
+    /**
+     * Handle Quene OnComplete
+     */
+
+    
   })
   
   /**
