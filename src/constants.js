@@ -43,6 +43,30 @@ const createText = (text) => {
   return new PIXI.Text(text , textStyle)
 }
 
+const createAnimateSprite = (texture_id) => {
+  let explosionTextures = [];
+
+  if (Object.prototype.toString.call(texture_id) === '[object Array]') {
+    texture_id.forEach(item => {
+      const RES = resources[item].textures;
+      for(let key in RES) {
+        if (RES.hasOwnProperty(key)) {
+          explosionTextures.push(RES[key])
+        }
+      }
+    });
+  } else {
+    const RES = resources[texture_id].textures;
+    for(let key in RES) {
+      if (RES.hasOwnProperty(key)) {
+        explosionTextures.push(RES[key])
+      }
+    }
+  }
+  
+  return new PIXI.extras.AnimatedSprite(explosionTextures);
+}
+
 function detectOrient() {
   var storage = localStorage; // 不一定要使用localStorage，其他存储数据的手段都可以
   var data = storage.getItem('J-recordOrientX');
@@ -79,7 +103,14 @@ window.addEventListener("onorientationchange" in window ? "orientationchange" : 
 }, false);
 
 
+console.log(c);
 export {
-  PIXI, GOWN, TWEEN, Container, autoDetectRenderer, loader, resources, TextureCache, Texture, Sprite, Text, Graphics, windowHeight, windowWidth, ScrollContainer, LayoutGroup, layout, screenScaleRitoX, screenScaleRitoY, getTexture,
-  NaviSlideDistance,c, createText
+  PIXI, GOWN, TWEEN, Container, autoDetectRenderer, loader, 
+  resources, TextureCache, Texture, Sprite, Text, 
+  Graphics, windowHeight, windowWidth, ScrollContainer, 
+  LayoutGroup, layout, screenScaleRitoX, screenScaleRitoY, 
+  getTexture,
+  NaviSlideDistance,
+  c , 
+  createText,createAnimateSprite
 }

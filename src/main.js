@@ -26,7 +26,13 @@ loader
   .add("assets/navigation.json")
   .add("assets/scenes-0.json")
   .add("assets/scenes-1.json")
-  .add("scenes/cat.json")
+  .add("assets/moon-shine.json")
+  .add([
+    "assets/1-1-action-0.json",
+    "assets/1-1-action-1.json",
+    "assets/1-1-action-2.json",
+    "assets/1-1-action-3.json",
+  ])
   .load(setup);
 
 

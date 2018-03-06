@@ -20,7 +20,9 @@ const MAX = Object.keys(scenes).length
 scene.init = function () {
   // 初始化场景
   // 索引
-  this._current = 0;
+  this._current = 0
+  this._current_scene = null
+  this._scenes = []
   this._setup()
   this._defineProperty()
 }
@@ -39,6 +41,7 @@ scene._defineProperty = function () {
       const to = -windowWidth * newValue;
       let start = this.position;
       this._current = newValue
+      this._current_scene = this._scenes[newValue]
       new TWEEN.Tween(start)
         .to({ x: to }, duration)
         .easing(TWEEN.Easing.Quadratic.In)
@@ -55,6 +58,7 @@ scene._setup = function () {
     _scene.x = windowWidth * idx
     _scene.scale.set(screenScaleRitoX, screenScaleRitoY)
     _scene.init && _scene.init()
+    this._scenes.push(_scene)
     this.addChild(_scene)
   })
   
@@ -67,7 +71,8 @@ scene._setup = function () {
   scene.x = -9 * windowWidth
 
   window.setTimeout(() => {
-    scene.x = -9 * windowWidth
+    this.x = -0 * windowWidth
+    this._current_scene = this._scenes[0]
   }, 0)
 }
 

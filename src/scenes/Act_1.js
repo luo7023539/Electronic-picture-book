@@ -6,16 +6,18 @@ import {
   windowHeight,
   getTexture,
   createText,
+  createAnimateSprite,
   c
 } from '@/constants'
 
+
 const Act = new Container()
 // 挂载一个初始化场景方法
+Act.quene = []
+
 Act.init = () => {
   const background = new Sprite(getTexture('1/backgroud1.png'))
   const person = new Sprite(getTexture('1/1-1.png'))
-  const moon = new Sprite(getTexture('1/moon01.png'))
-  moon.x = 600
 
   const action = new Sprite(getTexture('1/moon01.png'))
 
@@ -50,7 +52,49 @@ Act.init = () => {
   richText.x = 510;
   richText.y = 410;
 
-  Act.addChild(background, person, moon, action, richText)
+  const moon_shine = createAnimateSprite('assets/moon-shine.json')
+
+  moon_shine.animationSpeed = .1
+  moon_shine.play()
+
+  const action_1 = createAnimateSprite([
+    "assets/1-1-action-0.json",
+    "assets/1-1-action-1.json",
+    "assets/1-1-action-2.json",
+    "assets/1-1-action-3.json",
+  ])
+
+  action_1.loop = false
+  action_1.animationSpeed = .2
+
+  action_1.onFrameChange = function () {
+
+  }
+  Act.quene.push(action_1)
+
+  Act.addChild(
+    background,
+    action,
+    richText,
+    moon_shine,
+    action_1
+  )
+  
 }
 
+Act.play = function () {
+  this.quene.forEach(element => {
+    if (element.currentFrame === element.totalFrames -1) {
+      element.gotoAndPlay(0)
+    } else {
+      element.play()
+    }
+  });
+}
+
+Act.stop = function () {
+  this.quene.forEach(element => {
+    element.stop()
+  });
+}
 export default Act

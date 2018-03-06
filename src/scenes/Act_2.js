@@ -7,7 +7,9 @@ import {
 } from '@/constants'
 
 const Act = new Container()
-// 挂载一个初始化场景方法
+// 挂载一个初始化场景方法 
+Act.quene = []
+
 Act.init = () => {
   const background = new Sprite(getTexture('2/backgroud2.png'))
   const person = new Sprite(getTexture('2/2-1.png'))
@@ -19,8 +21,23 @@ Act.init = () => {
   richText.x = 400;
   richText.y = 70;
 
-  
   Act.addChild(background, person, richText)
+}
+
+Act.play = function () {
+  this.quene.forEach(element => {
+    if (element.currentFrame === element.totalFrames -1) {
+      element.gotoAndPlay(0)
+    } else {
+      element.play()
+    }
+  });
+}
+
+Act.stop = function () {
+  this.quene.forEach(element => {
+    element.stop()
+  });
 }
 
 export default Act

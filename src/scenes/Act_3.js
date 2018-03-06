@@ -7,6 +7,8 @@ import {
 } from '@/constants'
 
 const Act = new Container()
+Act.quene = []
+
 // 挂载一个初始化场景方法
 Act.init = () => {
   const background = new Sprite(getTexture('3/backgroud3.png'))

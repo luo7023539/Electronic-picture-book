@@ -21,6 +21,22 @@ widgets.init = function () {
   start.x = 204
   pause.x = 204
 
+  pause.visible = false
+
+  const playing = () => {
+    pause.visible = true
+    start.visible = false
+  }
+
+  const stopping = () => {
+    pause.visible = false
+    start.visible = true
+  }
+
+  this.showPlaying = playing
+  this.showPause = stopping
+
+
   const handleLeft = (ev) => {
     console.log(ev);
     scene.current--
@@ -28,6 +44,18 @@ widgets.init = function () {
 
   const handleRight = (ev) => {
     scene.current++
+  }
+
+  const handleStart = (ev) => {
+    const current_scene = scene._current_scene
+    playing()
+    current_scene.play()
+  }
+
+  const handlePause = (ev) => {
+    const current_scene = scene._current_scene
+    stopping()
+    current_scene.stop()
   }
 
   buttonLeft.buttonMode = true;
@@ -41,6 +69,15 @@ widgets.init = function () {
   buttonRight
     .on('touchend', handleRight)
 
+  start.buttonMode = true;
+  start.interactive = true;
+  start
+    .on('touchend', handleStart)
+
+  pause.buttonMode = true;
+  pause.interactive = true;
+  pause
+    .on('touchend', handlePause)
   widgets.interactive = true;
   widgets.on('touchend', (ev) => {
     ev.stopped = true;

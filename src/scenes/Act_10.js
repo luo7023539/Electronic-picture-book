@@ -13,9 +13,10 @@ import {
 } from '@/constants';
 
 const Act = new Container()
+Act.quene = []
+
 // 挂载一个初始化场景方法
 Act.init = () => {
-  console.log('Scene 10 Init');
   const person1 = new Sprite(getTexture('10/10-1.png'))
   const person2 = new Sprite(getTexture('10/10-2.png'))
   const person3 = new Sprite(getTexture('10/10-3.png'))
@@ -38,11 +39,10 @@ Act.init = () => {
   scrollContainer.width = windowWidth 
   scrollContainer.height = windowHeight 
 
-  console.log(scrollContainer);
   var richText = createText("我们一起上课，画画，玩游戏……但是……");
 
   // richText.width = 500
-  richText.x = 264;
+  richText.x = 364;
   richText.y = 703;
 
   Act.addChild(scrollContainer, richText)
