@@ -1,0 +1,164 @@
+{"frames": {
+
+"girl_eye_00012.png":
+{
+	"frame": {"x":528,"y":3077,"w":524,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":524,"h":767},
+	"sourceSize": {"w":560,"h":768}
+},
+"girl_eye_00013.png":
+{
+	"frame": {"x":529,"y":1,"w":525,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":525,"h":767},
+	"sourceSize": {"w":560,"h":768}
+},
+"girl_eye_00014.png":
+{
+	"frame": {"x":1,"y":1539,"w":525,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":525,"h":767},
+	"sourceSize": {"w":560,"h":768}
+},
+"girl_eye_00015.png":
+{
+	"frame": {"x":529,"y":770,"w":525,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":525,"h":767},
+	"sourceSize": {"w":560,"h":768}
+},
+"girl_eye_00016.png":
+{
+	"frame": {"x":1054,"y":3077,"w":524,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":524,"h":767},
+	"sourceSize": {"w":560,"h":768}
+},
+"girl_eye_00017.png":
+{
+	"frame": {"x":1055,"y":1539,"w":524,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":524,"h":767},
+	"sourceSize": {"w":560,"h":768}
+},
+"girl_eye_00018.png":
+{
+	"frame": {"x":1,"y":1,"w":526,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":526,"h":767},
+	"sourceSize": {"w":560,"h":768}
+},
+"girl_eye_00019.png":
+{
+	"frame": {"x":1,"y":770,"w":526,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":526,"h":767},
+	"sourceSize": {"w":560,"h":768}
+},
+"girl_eye_00020.png":
+{
+	"frame": {"x":1056,"y":1,"w":525,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":525,"h":767},
+	"sourceSize": {"w":560,"h":768}
+},
+"girl_eye_00021.png":
+{
+	"frame": {"x":1055,"y":2308,"w":524,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":524,"h":767},
+	"sourceSize": {"w":560,"h":768}
+},
+"girl_eye_00022.png":
+{
+	"frame": {"x":1581,"y":1539,"w":524,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":524,"h":767},
+	"sourceSize": {"w":560,"h":768}
+},
+"girl_eye_00023.png":
+{
+	"frame": {"x":1,"y":2308,"w":525,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":525,"h":767},
+	"sourceSize": {"w":560,"h":768}
+},
+"girl_eye_00024.png":
+{
+	"frame": {"x":1,"y":3077,"w":525,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":525,"h":767},
+	"sourceSize": {"w":560,"h":768}
+},
+"girl_eye_00025.png":
+{
+	"frame": {"x":528,"y":1539,"w":525,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":525,"h":767},
+	"sourceSize": {"w":560,"h":768}
+},
+"girl_eye_00026.png":
+{
+	"frame": {"x":1581,"y":2308,"w":524,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":524,"h":767},
+	"sourceSize": {"w":560,"h":768}
+},
+"girl_eye_00027.png":
+{
+	"frame": {"x":1580,"y":3077,"w":524,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":524,"h":767},
+	"sourceSize": {"w":560,"h":768}
+},
+"girl_eye_00028.png":
+{
+	"frame": {"x":1056,"y":770,"w":525,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":525,"h":767},
+	"sourceSize": {"w":560,"h":768}
+},
+"girl_eye_00029.png":
+{
+	"frame": {"x":528,"y":2308,"w":525,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":525,"h":767},
+	"sourceSize": {"w":560,"h":768}
+},
+"girl_eye_00030.png":
+{
+	"frame": {"x":528,"y":3077,"w":524,"h":767},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":524,"h":767},
+	"sourceSize": {"w":560,"h":768}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "6-action-1.png",
+	"format": "RGBA8888",
+	"size": {"w":2106,"h":3845},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:6ddbcf4483ddf9cea9456c89e8631697:240972b3c0e417eb82fc894a1d884125:d76ad12b8b93ac616421e713fd7beb6f$"
+}
+}

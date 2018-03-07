@@ -43,6 +43,12 @@ loader
     "assets/3-action-girl-face.json",
     "assets/3-action-girl-hand.json"
   ])
+  .add([
+    "assets/4-action-1.json",
+    "assets/4-action-2.json",
+    "assets/4-action-3.json",
+    "assets/4-action-4.json",
+  ])
 
   .load(setup);
 
