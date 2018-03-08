@@ -83,6 +83,12 @@ stage.event = function () {
         navigation.slide('up')
       } else if (direction === 2) {
         navigation.slide('down')
+      } else if (direction === 6) {
+        scene.current--
+      } else if (direction === 4){
+        scene.current++
+      } else {
+        
       }
     }
     cache = null
@@ -90,5 +96,10 @@ stage.event = function () {
   })
 
 }
+
+window.__scene = scene
+window.__navigation = navigation
+window.__widgets = widgets
+
 
 export default stage

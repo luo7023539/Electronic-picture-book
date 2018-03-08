@@ -59,11 +59,11 @@ Act.init = () => {
   record.y = 580
 
 
-  if(!navigator.getUserMedia){
-    alert("您的浏览器不支持获取音频。")
-  }
+  // if(!navigator.getUserMedia){
+  //   alert("您的浏览器不支持获取音频。")
+  // }
 
-  navigator.getUserMedia({audio: true}, onSuccess, onError)
+  // navigator.getUserMedia({audio: true}, onSuccess, onError)
 
   const action_1 = createAnimateSprite([
     "assets/15-0.json",
@@ -72,16 +72,9 @@ Act.init = () => {
     "assets/15-3.json",
   ])
 
-  const save = new Sprite(getTexture('15-save.png'))
-  const share = new Sprite(getTexture('15-share.png'))
-  save.x = 40
-  save.y = 650
-  share.x = 280
-  share.y = 650
-
   Act.quene.push(action_1)
 
-  Act.addChild(action_1, richText, wrap, soundwave, content, record, save, share)
+  Act.addChild(action_1, richText, wrap, soundwave, content, record)
 }
 
 Act.play = function () {

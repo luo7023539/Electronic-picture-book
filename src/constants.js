@@ -72,6 +72,9 @@ const createAnimateSprite = (texture_id) => {
   const sprite = new PIXI.extras.AnimatedSprite(explosionTextures)
   sprite.loop = false
   sprite.animationSpeed = .5
+  sprite.onComplete = function () {
+    window.__widgets.showPlaying()
+  }
   return sprite;
 }
 
@@ -111,7 +114,6 @@ window.addEventListener("onorientationchange" in window ? "orientationchange" : 
 }, false);
 
 
-console.log(c);
 export {
   PIXI, GOWN, TWEEN, Container, autoDetectRenderer, loader, 
   resources, TextureCache, Texture, Sprite, Text, 

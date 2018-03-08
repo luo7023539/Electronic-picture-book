@@ -78,6 +78,12 @@ loader
     "assets/9-0.json",
   ])
   .add([
+    "assets/10-1-0.json",
+    "assets/10-2-0.json",
+    "assets/10-2-1.json",
+    "assets/10-3-0.json",
+  ])
+  .add([
     "assets/11-0.json",
     "assets/11-1.json",
   ])
@@ -98,12 +104,26 @@ loader
     "assets/15-2.json",
     "assets/15-3.json",
   ])
+  .on("progress", loadProgressHandler)
   .load(setup);
 
 
 let gameScene, state;
 //Define variables that might be used in more 
 //than one function
+
+function loadProgressHandler(loader, resource) {
+  //Display the file `url` currently being loaded
+  // console.log("loading: " + resource.url); 
+
+  //Display the percentage of files currently loaded
+  // console.log("progress: " + loader.progress + "%"); 
+
+  //If you gave your files names as the first argument 
+  //of the `add` method, you can access them like this
+  //console.log("loading: " + resource.name);
+}
+
 
 function setup() {
 

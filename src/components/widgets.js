@@ -33,12 +33,11 @@ widgets.init = function () {
     start.visible = true
   }
 
-  this.showPlaying = playing
-  this.showPause = stopping
+  this.showPlaying = stopping
+  this.showPause = playing
 
 
   const handleLeft = (ev) => {
-    console.log(ev);
     scene.current--
   }
 
