@@ -36,7 +36,7 @@ let screenScaleRitoY = windowHeight / 768;
 const NaviSlideDistance = 50;
 
 const getTexture = (textureName) => {
-  return resources['assets/scenes-0.json'].textures[textureName] || resources['assets/scenes-1.json'].textures[textureName]
+  return resources['assets/pic-0.json'].textures[textureName] || resources['assets/pic-1.json'].textures[textureName]
 }
 
 const createText = (text) => {
@@ -45,6 +45,7 @@ const createText = (text) => {
 
 const createAnimateSprite = (texture_id) => {
   let explosionTextures = [];
+  let textures = {};
 
   if (Object.prototype.toString.call(texture_id) === '[object Array]') {
     texture_id.forEach(item => {
@@ -55,6 +56,11 @@ const createAnimateSprite = (texture_id) => {
         }
       }
     });
+
+    explosionTextures.sort((a, b) => {
+      return +a.textureCacheIds[0].replace('.png', '') - +b.textureCacheIds[0].replace('.png', '')
+    })
+
   } else {
     const RES = resources[texture_id].textures;
     for(let key in RES) {
@@ -65,7 +71,7 @@ const createAnimateSprite = (texture_id) => {
   }
   const sprite = new PIXI.extras.AnimatedSprite(explosionTextures)
   sprite.loop = false
-  sprite.animationSpeed = .2
+  sprite.animationSpeed = .5
   return sprite;
 }
 

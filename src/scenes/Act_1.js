@@ -16,8 +16,7 @@ const Act = new Container()
 Act.quene = []
 
 Act.init = () => {
-  const background = new Sprite(getTexture('1/backgroud1.png'))
-  const person = new Sprite(getTexture('1/1-1.png'))
+  const background = new Sprite(getTexture('backgroud1.png'))
 
   var richText = createText("有一天，奶奶和我在院子里看月亮\
   我指着月亮说它弯弯地像奶奶的眉毛\
@@ -30,31 +29,21 @@ Act.init = () => {
   richText.x = 510;
   richText.y = 410;
 
-  const moon_shine = createAnimateSprite('assets/moon-shine.json')
-
-  moon_shine.loop = true
-  moon_shine.animationSpeed = .1
-  moon_shine.play()
-
   const action_1 = createAnimateSprite([
-    "assets/1-1-action-0.json",
-    "assets/1-1-action-1.json",
-    "assets/1-1-action-2.json",
-    "assets/1-1-action-3.json",
+    "assets/1-0.json",
+    "assets/1-1.json",
+    "assets/1-2.json",
+    "assets/1-3.json",
+    "assets/1-4.json",
+    "assets/1-5.json",
+    "assets/1-6.json",
   ])
 
-  action_1.loop = false
-  action_1.animationSpeed = .2
-
-  action_1.onFrameChange = function () {
-
-  }
   Act.quene.push(action_1)
 
   Act.addChild(
     background,
     richText,
-    moon_shine,
     action_1
   )
   

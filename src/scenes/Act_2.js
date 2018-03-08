@@ -12,19 +12,10 @@ const Act = new Container()
 Act.quene = []
 
 Act.init = () => {
-  const background = new Sprite(getTexture('2/backgroud2.png'))
-  const person = createAnimateSprite('assets/2-1-action.json')
+  const background = new Sprite(getTexture('backgroud2.png'))
+  const person = createAnimateSprite('assets/2-0.json')
   
-  person.loop = false
   Act.quene.push(person)
-
-  const moon_shine = createAnimateSprite('assets/moon-shine.json')
-
-  moon_shine.x = -600
-  moon_shine.loop = true
-  moon_shine.animationSpeed = .1
-  moon_shine.play()
-
 
   var richText = createText("之后我就常常对着窗户外面\
   悄悄地向神仙许愿");
@@ -32,10 +23,8 @@ Act.init = () => {
   // richText.width = 500
   richText.x = 400;
   richText.y = 70;
-
   
-
-  Act.addChild(background, person, richText, moon_shine)
+  Act.addChild(background, person, richText)
 }
 
 Act.play = function () {

@@ -5,8 +5,8 @@ import {
   windowWidth,
   windowHeight,
   getTexture,
-  createText
-
+  createText,
+  createAnimateSprite
 } from '@/constants'
 
 const Act = new Container()
@@ -14,13 +14,7 @@ Act.quene = []
 
 // 挂载一个初始化场景方法
 Act.init = () => {
-  const background = new Sprite(getTexture('8/backgroud8.png'))
-
-  const hand = new Sprite(getTexture('8/8-1.png'))
-  const flower = new Sprite(getTexture('8/8-2.png'))
-  const rain = new Sprite(getTexture('8/8-2-rain.png'))
-  const cloud = new Sprite(getTexture('8/8-3-cloud.png'))
-
+  const background = new Sprite(getTexture('backgroud8.png'))
   const richText = createText("可是我知道\
   那双大手为我正在抵挡所有的苦难");
 
@@ -28,8 +22,34 @@ Act.init = () => {
   richText.x = 166;
   richText.y = 691;
 
-  Act.addChild(background, hand, flower, cloud, richText)
+  const action_1 = createAnimateSprite([
+    "assets/8-0.json",
+    "assets/8-1.json",
+    "assets/8-2.json",
+    "assets/8-3.json",
+  ])
+
+  Act.quene.push(action_1)
+
+  Act.addChild(background, action_1, richText)
 
 }
+
+Act.play = function () {
+  this.quene.forEach(element => {
+    if (element.currentFrame === element.totalFrames - 1) {
+      element.gotoAndPlay(0)
+    } else {
+      element.play()
+    }
+  });
+}
+
+Act.stop = function () {
+  this.quene.forEach(element => {
+    element.stop()
+  });
+}
+
 
 export default Act

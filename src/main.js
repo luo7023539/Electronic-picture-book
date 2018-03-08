@@ -1,5 +1,5 @@
 import {
-GOWN,
+  GOWN,
   Container,
   TWEEN,
   autoDetectRenderer,
@@ -24,32 +24,80 @@ new GOWN.ThemeParser("assets/shapes_desktop.json")
 loader
   .add("assets/widget.json")
   .add("assets/navigation.json")
-  .add("assets/scenes-0.json")
-  .add("assets/scenes-1.json")
-  .add("assets/moon-shine.json")
+  .add("assets/record.json")
   .add([
-    "assets/1-1-action-0.json",
-    "assets/1-1-action-1.json",
-    "assets/1-1-action-2.json",
-    "assets/1-1-action-3.json",
-  ])
-  .add("assets/2-1-action.json")
-  .add([
-    "assets/3-action-star-light.json",
-    "assets/3-action-star-dark.json",
-    "assets/3-action-dream-hide-0.json",
-    "assets/3-action-dream-hide-1.json",
-    "assets/3-action-dream-show.json",
-    "assets/3-action-girl-face.json",
-    "assets/3-action-girl-hand.json"
+    "assets/pic-0.json",
+    "assets/pic-1.json"
   ])
   .add([
-    "assets/4-action-1.json",
-    "assets/4-action-2.json",
-    "assets/4-action-3.json",
-    "assets/4-action-4.json",
+    "assets/1-0.json",
+    "assets/1-1.json",
+    "assets/1-2.json",
+    "assets/1-3.json",
+    "assets/1-4.json",
+    "assets/1-5.json",
+    "assets/1-6.json",
   ])
-
+  .add("assets/2-0.json")
+  .add([
+    "assets/3-0.json",
+    "assets/3-1.json",
+    "assets/3-2.json",
+    "assets/3-3.json",
+    "assets/3-4.json",
+  ])
+  .add([
+    "assets/4-0.json",
+    "assets/4-1.json",
+    "assets/4-2.json",
+    "assets/4-3.json",
+    "assets/4-4.json",
+  ])
+  .add([
+    "assets/5-0.json",
+    "assets/5-1.json",
+    "assets/5-2.json",
+    "assets/5-3.json",
+  ])
+  .add([
+    "assets/6-0.json",
+    "assets/6-1.json",
+    "assets/6-2.json",
+    "assets/6-3.json",
+  ])
+  .add([
+    "assets/7-0.json",
+  ])
+  .add([
+    "assets/8-0.json",
+    "assets/8-1.json",
+    "assets/8-2.json",
+    "assets/8-3.json",
+  ])
+  .add([
+    "assets/9-0.json",
+  ])
+  .add([
+    "assets/11-0.json",
+    "assets/11-1.json",
+  ])
+  .add([
+    "assets/12-0.json",
+  ])
+  .add([
+    "assets/13-0.json",
+    "assets/13-1.json",
+  ])
+  .add([
+    "assets/14-0.json",
+    "assets/14-1.json",
+  ])
+  .add([
+    "assets/15-0.json",
+    "assets/15-1.json",
+    "assets/15-2.json",
+    "assets/15-3.json",
+  ])
   .load(setup);
 
 

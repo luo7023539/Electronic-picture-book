@@ -5,8 +5,8 @@ import {
   windowWidth,
   windowHeight,
   getTexture,
-  createText
-
+  createText,
+  createAnimateSprite
 } from '@/constants'
 
 const Act = new Container()
@@ -14,8 +14,7 @@ Act.quene = []
 
 // 挂载一个初始化场景方法
 Act.init = () => {
-  const background = new Sprite(getTexture('9/backgroud9.png'))
-  const person = new Sprite(getTexture('9/9-1.png'))
+  const background = new Sprite(getTexture('backgroud9.png'))
 
   const richText = createText("在学校，我有一个好朋友\
   她每天笑得很开心，像个小太阳");
@@ -24,7 +23,29 @@ Act.init = () => {
   richText.x = 129;
   richText.y = 541;
 
-  Act.addChild(background, person, richText)
+  const action_1 = createAnimateSprite([
+    "assets/9-0.json",
+  ])
+
+  Act.quene.push(action_1)
+
+  Act.addChild(background, action_1, richText)
+}
+
+Act.play = function () {
+  this.quene.forEach(element => {
+    if (element.currentFrame === element.totalFrames - 1) {
+      element.gotoAndPlay(0)
+    } else {
+      element.play()
+    }
+  });
+}
+
+Act.stop = function () {
+  this.quene.forEach(element => {
+    element.stop()
+  });
 }
 
 export default Act
