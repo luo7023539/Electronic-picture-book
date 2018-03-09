@@ -6,7 +6,7 @@ const c = new Charm(PIXI)
 
 const textStyle = new PIXI.TextStyle({
   fontFamily: 'Microsoft YaHei',
-  fontSize: 24,
+  fontSize: 22,
   fontWeight: 'normal',
   lineHeight: 20,
   fill: '#fff',
