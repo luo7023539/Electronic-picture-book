@@ -38,7 +38,7 @@ loader
     "assets/1-5.json",
     "assets/1-6.json",
   ])
-  // .add("assets/2-0.json")
+  .add("assets/2-0.json")
   // .add([
   //   "assets/3-0.json",
   //   "assets/3-1.json",

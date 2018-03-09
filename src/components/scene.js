@@ -68,7 +68,7 @@ scene._setup = function () {
     const _scene = scenes[item]
     _scene.x = windowWidth * idx
     _scene.scale.set(screenScaleRitoX, screenScaleRitoY)
-    if (idx === 0) {
+    if (idx === 1 || idx === 0) {
       _scene.init && _scene.init()
     }
     this._scenes.push(_scene)
