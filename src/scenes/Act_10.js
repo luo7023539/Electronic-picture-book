@@ -21,9 +21,9 @@ Act.quene = []
 
 // 挂载一个初始化场景方法
 Act.init = () => {
-  const sun = new Sprite(getTexture('10-sun.png'))
   const indoor = new Sprite(getTexture('backgroud10-indoor.png'))
   const outdoor = new Sprite(getTexture('backgroud10-outdoor.png'))
+  const sun = new Sprite(getTexture('10-sun.png'))
   const scrollContainer = new ScrollContainer();
   const layoutGroup = new LayoutGroup();
 
@@ -35,6 +35,7 @@ Act.init = () => {
   const action_3 = createAnimateSprite("assets/10-3-0.json")
 
   layoutGroup.addChild(outdoor)
+  layoutGroup.addChild(sun)
   layoutGroup.addChild(indoor)
   layoutGroup.addChild(action_1)
   layoutGroup.addChild(action_2)
@@ -54,44 +55,72 @@ Act.init = () => {
   richText.x = 364;
   richText.y = 703;
   Act.animate = {
-    scrollContainer, layoutGroup
+    scrollContainer, layoutGroup, sun
   }
 
   Act.addChild(scrollContainer, richText)
 }
 
 Act.play = function () {
-  let step = Act.step
-  let elm = Act.quene[step]
-  elm.play()
-  if (Act.step === 2) {
-    return Act.stop()
-  }
+  window.__widgets.hideBtn()
+
   const duration = 2000
   const {
-    scrollContainer, layoutGroup
+    scrollContainer, layoutGroup, sun
   } = Act.animate
+
+  let step = Act.step
+  let elm = Act.quene[step]
+  if (step === 3) {
+    Act.reset()
+    Act.play()
+    return 
+  }
+  elm.play()
+  if (Act.step === 0) {
+    new TWEEN.Tween(sun)
+      .to({ x: 100, y: -40 }, 2000)
+      .easing(TWEEN.Easing.Quadratic.InOut)
+      .start()
+  }
 
   elm.onComplete = () => {
     elm.gotoAndStop(0)
-    new TWEEN.Tween(layoutGroup)
-    .to({ x: -(step + 1) * 920 }, duration)
-    .easing(TWEEN.Easing.Quadratic.InOut)
-    .start()
-    .onComplete(Act.play)
+    if (step === 2) {
+      window.__widgets.showPlaying()
+      return
+    }
+    if (Act.step === 1 || Act.step === 2) {
+      new TWEEN.Tween(layoutGroup)
+      .to({ x: -(step + 1) * 920 }, duration)
+      .easing(TWEEN.Easing.Quadratic.InOut)
+      .start()
+      .onComplete(Act.play)
+
+    }
+
+    if (Act.step === 1) {
+      new TWEEN.Tween(sun)
+        .to({ x: 1200, y: -80 }, 2000)
+        .easing(TWEEN.Easing.Quadratic.InOut)
+        .start()
+    }
 
     if (Act.step === 2) {
-      return Act.stop()
+      new TWEEN.Tween(sun)
+        .to({ x: 2400, y: -40 }, 2000)
+        .easing(TWEEN.Easing.Quadratic.InOut)
+        .start()
     }
   }
   Act.step++
 }
 
-Act.stop = function () {
+Act.reset = function () {
   const {
-    scrollContainer, layoutGroup
+    scrollContainer, layoutGroup, sun
   } = Act.animate
-  Act.step = layoutGroup.x = 0
+  Act.step = layoutGroup.x  = sun.x = 0
 }
 
 export default Act

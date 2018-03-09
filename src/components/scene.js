@@ -37,11 +37,22 @@ scene._defineProperty = function () {
     set(newValue) {
       if (newValue < 0 || newValue > MAX - 1)
         return;
-      const duration = 1024;
-      const to = -windowWidth * newValue;
-      let start = this.position;
+      const oldValue = this._current
       this._current = newValue
       this._current_scene = this._scenes[newValue]
+      const newScene = this._scenes[newValue]
+      const oldScene = this._scenes[oldValue]
+      let start = this.position;
+      const duration = 1024;
+      const to = -windowWidth * newValue;
+      console.log(to);
+      if (oldScene) {
+        if (oldScene.reset) {
+          oldScene.reset()
+        } else {
+          // oldScene.quene.forEach(i => i.gotoAndStop())
+        }
+      }
       new TWEEN.Tween(start)
         .to({ x: to }, duration)
         .easing(TWEEN.Easing.Quadratic.In)
@@ -64,10 +75,8 @@ scene._setup = function () {
     /**
      * Handle Quene OnComplete
      */
-
-    
   })
-  
+
   /**
    * 未知BUG
    * 需要初始化至第10页
@@ -77,8 +86,8 @@ scene._setup = function () {
   scene.x = -9 * windowWidth
 
   window.setTimeout(() => {
-    this.x = -9 * windowWidth
-    this._current_scene = this._scenes[9]
+    this.x = -0 * windowWidth
+    this._current_scene = this._scenes[0]
   }, 0)
 }
 

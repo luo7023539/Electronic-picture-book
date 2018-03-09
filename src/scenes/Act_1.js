@@ -65,5 +65,4 @@ Act.stop = function () {
   });
 }
 
-
 export default Act

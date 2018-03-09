@@ -33,8 +33,14 @@ widgets.init = function () {
     start.visible = true
   }
 
+  const hideBtn = () => {
+    pause.visible = false
+    start.visible = false
+  }
+  
   this.showPlaying = stopping
   this.showPause = playing
+  this.hideBtn = hideBtn
 
 
   const handleLeft = (ev) => {

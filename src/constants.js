@@ -5,16 +5,15 @@ const GOWN = require('gown')
 const c = new Charm(PIXI)
 
 const textStyle = new PIXI.TextStyle({
-  fontFamily: 'Arial',
-  fontSize: 18,
-  fontStyle: 'italic',
+  fontFamily: 'Microsoft YaHei',
+  fontSize: 24,
   fontWeight: 'normal',
+  lineHeight: 20,
   fill: '#fff',
   dropShadow: true,
   dropShadowColor: '#62240f',
-  dropShadowBlur: 1,
-  dropShadowAngle: Math.PI / 6,
-  dropShadowDistance: 2,
+  dropShadowBlur: 5,
+  dropShadowDistance: 4,
   wordWrap: true,
   wordWrapWidth: 50
 });
