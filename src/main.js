@@ -39,71 +39,71 @@ loader
     "assets/1-6.json",
   ])
   .add("assets/2-0.json")
-  // .add([
-  //   "assets/3-0.json",
-  //   "assets/3-1.json",
-  //   "assets/3-2.json",
-  //   "assets/3-3.json",
-  //   "assets/3-4.json",
-  // ])
-  // .add([
-  //   "assets/4-0.json",
-  //   "assets/4-1.json",
-  //   "assets/4-2.json",
-  //   "assets/4-3.json",
-  //   "assets/4-4.json",
-  // ])
-  // .add([
-  //   "assets/5-0.json",
-  //   "assets/5-1.json",
-  //   "assets/5-2.json",
-  //   "assets/5-3.json",
-  // ])
-  // .add([
-  //   "assets/6-0.json",
-  //   "assets/6-1.json",
-  //   "assets/6-2.json",
-  //   "assets/6-3.json",
-  // ])
-  // .add([
-  //   "assets/7-0.json",
-  // ])
-  // .add([
-  //   "assets/8-0.json",
-  //   "assets/8-1.json",
-  //   "assets/8-2.json",
-  //   "assets/8-3.json",
-  // ])
-  // .add([
-  //   "assets/9-0.json",
-  // ])
-  // .add([
-  //   "assets/10-1-0.json",
-  //   "assets/10-2-0.json",
-  //   "assets/10-2-1.json",
-  //   "assets/10-3-0.json",
-  // ])
-  // .add([
-  //   "assets/11-0.json",
-  //   "assets/11-1.json",
-  // ])
-  // .add([
-  //   "assets/12-0.json",
-  // ])
-  // .add([
-  //   "assets/13-0.json",
-  //   "assets/13-1.json",
-  // ])
-  // .add([
-  //   "assets/14-0.json",
-  //   "assets/14-1.json",
-  // ])
-  // .add([
-  //   "assets/15-0.json",
-  //   "assets/15-1.json",
-  //   "assets/15-2.json",
-  //   "assets/15-3.json",
-  // ])
+  .add([
+    "assets/3-0.json",
+    "assets/3-1.json",
+    "assets/3-2.json",
+    "assets/3-3.json",
+    "assets/3-4.json",
+  ])
+  .add([
+    "assets/4-0.json",
+    "assets/4-1.json",
+    "assets/4-2.json",
+    "assets/4-3.json",
+    "assets/4-4.json",
+  ])
+  .add([
+    "assets/5-0.json",
+    "assets/5-1.json",
+    "assets/5-2.json",
+    "assets/5-3.json",
+  ])
+  .add([
+    "assets/6-0.json",
+    "assets/6-1.json",
+    "assets/6-2.json",
+    "assets/6-3.json",
+  ])
+  .add([
+    "assets/7-0.json",
+  ])
+  .add([
+    "assets/8-0.json",
+    "assets/8-1.json",
+    "assets/8-2.json",
+    "assets/8-3.json",
+  ])
+  .add([
+    "assets/9-0.json",
+  ])
+  .add([
+    "assets/10-1-0.json",
+    "assets/10-2-0.json",
+    "assets/10-2-1.json",
+    "assets/10-3-0.json",
+  ])
+  .add([
+    "assets/11-0.json",
+    "assets/11-1.json",
+  ])
+  .add([
+    "assets/12-0.json",
+  ])
+  .add([
+    "assets/13-0.json",
+    "assets/13-1.json",
+  ])
+  .add([
+    "assets/14-0.json",
+    "assets/14-1.json",
+  ])
+  .add([
+    "assets/15-0.json",
+    "assets/15-1.json",
+    "assets/15-2.json",
+    "assets/15-3.json",
+  ])
   .on("progress", loadProgressHandler)
   .load(setup);
 
