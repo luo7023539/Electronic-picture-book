@@ -1,6 +1,6 @@
 {"frames": {
 
-"backgroud7.png":
+"7/backgroud7.png":
 {
 	"frame": {"x":1,"y":1,"w":1024,"h":768},
 	"rotated": false,
@@ -8,17 +8,25 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":1024,"h":768},
 	"sourceSize": {"w":1024,"h":768}
 },
-"backgroud8.png":
+"8/8-1.png":
 {
-	"frame": {"x":1027,"y":1,"w":1024,"h":768},
+	"frame": {"x":1,"y":2311,"w":1024,"h":532},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":236,"w":1024,"h":532},
+	"sourceSize": {"w":1024,"h":532}
+},
+"8/backgroud8.png":
+{
+	"frame": {"x":1,"y":771,"w":1024,"h":768},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":1024,"h":768},
 	"sourceSize": {"w":1024,"h":768}
 },
-"backgroud9.png":
+"9/backgroud9.png":
 {
-	"frame": {"x":2053,"y":1,"w":1024,"h":768},
+	"frame": {"x":1,"y":1541,"w":1024,"h":768},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":1024,"h":768},
@@ -29,8 +37,8 @@
 	"version": "1.0",
 	"image": "pic-1.png",
 	"format": "RGBA8888",
-	"size": {"w":3078,"h":770},
+	"size": {"w":1026,"h":2844},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:d711c79f0277b24b40b60e553a2d8362:1d088d0ef8dd8332de9a832ed8a109e7:5d8646909809a9643d2a241ea2e0adbc$"
+	"smartupdate": "$TexturePacker:SmartUpdate:03a6317e22144caf0c636cbd2ea3b198:4e68245cd729f8381689d59f7794f017:5d8646909809a9643d2a241ea2e0adbc$"
 }
 }

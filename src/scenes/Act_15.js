@@ -6,40 +6,54 @@ import {
   windowHeight,
   getTexture,
   createText,
-  createAnimateSprite
+  createAnimateSprite,
+  TWEEN
 } from '@/constants'
 
 const Act = new Container()
 Act.quene = []
-let audioContext, context, liveSource
+let audioContext, context, liveSource, levelChecker, isRecording
 
-function onSuccess(stream){
-  console.log('onSuccess');
-	audioContext = window.AudioContext || window.webkitAudioContext;
-	context = new audioContext(); //创建一个管理、播放声音的对象
-	liveSource = context.createMediaStreamSource(stream); //将麦克风的声音输入这个对象
-    var levelChecker = context.createScriptProcessor(4096,1,1); //创建一个音频分析对象，采样的缓冲区大小为4096，输入和输出都是单声道
-    liveSource.connect(levelChecker); //将该分析对象与麦克风音频进行连接
-    levelChecker.onaudioprocess = function(e) { //开始处理音频
-		var buffer = e.inputBuffer.getChannelData(0); //获得缓冲区的输入音频，转换为包含了PCM通道数据的32位浮点数组
-		//创建变量并迭代来获取最大的音量值
-		var maxVal = 0; 
-		for (var i = 0; i < buffer.length; i++) {
-			if (maxVal < buffer[i]) {
-				maxVal = buffer[i];
-			}
-		}
-    //显示音量值
-    console.log("您的音量值："+Math.round(maxVal*100));
-		if(maxVal>.5){
-			//当音量值大于0.5时，显示“声音太响”字样，并断开音频连接
-			console.log("您的声音太响了!!")
-			liveSource.disconnect(levelChecker);
-		}
-	};
+function onSuccess(stream) {
+  audioContext = window.AudioContext || window.webkitAudioContext;
+  context = new audioContext();
+  liveSource = context.createMediaStreamSource(stream);
+  levelChecker = context.createScriptProcessor(4096, 1, 1);
+  liveSource.connect(levelChecker);
+
+  const { cover } = Act.animate
+  const originHeight = cover.height
+
+  levelChecker.onaudioprocess = function (e) {
+    var buffer = e.inputBuffer.getChannelData(0);
+    var maxVal = 0;
+    for (var i = 0; i < buffer.length; i++) {
+      if (maxVal < buffer[i]) {
+        maxVal = buffer[i];
+      }
+    }
+    let volumn = Math.round(maxVal * 100)
+    let rate = (volumn / 100) > 1 ? 1 : volumn / 100
+    let height = originHeight - originHeight * rate
+    let y = 95 * rate
+    console.log(volumn, rate, height, y);
+    new TWEEN.Tween(cover)
+      .to({ height, y }, 150)
+      .easing(TWEEN.Easing.Quadratic.In)
+      .start();
+
+    if (rate === 1) {
+      // 当音量值大于0.5时，显示“声音太响”字样，并断开音频连接
+      // console.log("您的声音太响了!!")
+      window.setTimeout(() => {
+        levelChecker.disconnect(context.destination)
+        Act.play()
+      }, 150)
+    }
+  };
 }
 
-function onError () {
+function onError() {
   console.log('Error', arguments);
 }
 
@@ -48,7 +62,8 @@ Act.init = () => {
   const recordRES = resources["assets/record.json"].textures
   const record = new Sprite(recordRES['15-record.png'])
   const wrap = new Sprite(recordRES['15-1.png'])
-  const content = new Sprite(recordRES['15-1-3.png'])
+  const content = new Sprite(recordRES['15-1-2.png'])
+  const cover = new Sprite(recordRES['15-1-3.png'])
   const richText = createText("离月亮更近的地方，许下我的愿望\
   你也可以试着喊一下")
   const soundwave = new Sprite(getTexture('15-soundwave.png'))
@@ -59,11 +74,26 @@ Act.init = () => {
   record.y = 580
 
 
-  // if(!navigator.getUserMedia){
-  //   alert("您的浏览器不支持获取音频。")
-  // }
+  record.buttonMode = true;
+  record.interactive = true;
 
-  // navigator.getUserMedia({audio: true}, onSuccess, onError)
+  record.on('pointerdown', function () {
+    if (isRecording) {
+      levelChecker.disconnect(context.destination)
+      isRecording = false
+      return false
+    }
+    levelChecker.connect(context.destination)
+    isRecording = true
+  })
+
+
+  navigator.getUserMedia = navigator.getUserMedia
+    || navigator.webkitGetUserMedia
+    || navigator.mozGetUserMedia
+    || navigator.msGetUserMedia;
+
+  navigator.getUserMedia({ audio: true }, onSuccess, onError)
 
   const action_1 = createAnimateSprite([
     "assets/15-0.json",
@@ -72,12 +102,24 @@ Act.init = () => {
     "assets/15-3.json",
   ])
 
+  Act.animate = {
+    cover, soundwave, record, wrap, content, cover
+  }
   Act.quene.push(action_1)
 
-  Act.addChild(action_1, richText, wrap, soundwave, content, record)
+  Act.addChild(action_1, richText, soundwave, record, wrap, content, cover)
 }
 
 Act.play = function () {
+  const {
+    cover, soundwave, record, wrap, content
+  } = Act.animate
+  cover.visible
+    = wrap.visible
+    = content.visible
+    = record.visible
+    = soundwave.visible
+    = false
   this.quene.forEach(element => {
     if (element.currentFrame === element.totalFrames - 1) {
       element.gotoAndPlay(0)
@@ -89,7 +131,7 @@ Act.play = function () {
 
 Act.stop = function () {
   this.quene.forEach(element => {
-    element.stop()
+    element.stop && element.stop()
   });
 }
 

@@ -45,7 +45,6 @@ scene._defineProperty = function () {
       let start = this.position;
       const duration = 1024;
       const to = -windowWidth * newValue;
-      console.log(to);
       if (oldScene) {
         if (oldScene.reset) {
           oldScene.reset()
@@ -56,6 +55,14 @@ scene._defineProperty = function () {
       new TWEEN.Tween(start)
         .to({ x: to }, duration)
         .easing(TWEEN.Easing.Quadratic.In)
+        .onComplete(() => {
+          if (newValue === 14) {
+            window.__widgets.visible = false
+          } else {
+            window.__widgets.visible = true
+            newScene.play()
+          }
+        })
         .start();
     }
   })

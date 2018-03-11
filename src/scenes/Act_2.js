@@ -12,10 +12,11 @@ const Act = new Container()
 Act.quene = []
 
 Act.init = () => {
-  const background = new Sprite(getTexture('backgroud2.png'))
-  const person = createAnimateSprite('assets/2-0.json')
+  const background = new Sprite(getTexture('2/backgroud2.png'))
+  const person = createAnimateSprite([
+    "assets/2-0.json",
+  ])
   
-  Act.quene.push(person)
 
   var richText = createText("之后我就常常对着窗户外面\
   悄悄地向神仙许愿");
@@ -23,14 +24,14 @@ Act.init = () => {
   // richText.width = 500
   richText.x = 400;
   richText.y = 70;
-  
+  Act.quene.push(person, richText)
   Act.addChild(background, person, richText)
 }
 
 Act.play = function () {
   this.quene.forEach(element => {
     if (element.currentFrame === element.totalFrames -1) {
-      element.gotoAndPlay(0)
+      element.gotoAndPlay && element.gotoAndPlay(0)
     } else {
       element.play()
     }
@@ -39,7 +40,7 @@ Act.play = function () {
 
 Act.stop = function () {
   this.quene.forEach(element => {
-    element.stop()
+    element.stop && element.stop()
   });
 }
 

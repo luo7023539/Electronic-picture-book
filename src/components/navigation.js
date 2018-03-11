@@ -17,8 +17,9 @@ import scene from '@/components/scene'
 const navigation = new Container()
 
 navigation.init = function () {
-  const originX = 50 * screenScaleRitoX, originY = 5 * screenScaleRitoX, width = 130 * screenScaleRitoX, height = 130 * screenScaleRitoX, gap = 20 * screenScaleRitoX;
+  const originX = 50 * screenScaleRitoX, originY = 5 * screenScaleRitoX, width = 130 * screenScaleRitoX, height = 180 * screenScaleRitoX, gap = 10 * screenScaleRitoX;
   const RES = resources['assets/navigation.json'].textures
+  const thumRES = resources['assets/thumbnails.json'].textures
   const wrap = new Sprite(RES['navigation.png'])
 
   wrap.scale.set(screenScaleRitoX, screenScaleRitoX)
@@ -31,9 +32,9 @@ navigation.init = function () {
   Thumbnails.viewPort = layoutGroup
   Thumbnails.height = wrap.height;
   Thumbnails.width = wrap.width - 105 * screenScaleRitoX;
-
+  console.log(wrap);
   for (let i = 0; i < 16; i++) {
-    const _Thumbnails = new Sprite(RES['1.jpg'])
+    const _Thumbnails = new Sprite(thumRES[i + 1 + '.jpg'])
     _Thumbnails._to = i
     _Thumbnails.height = width
     _Thumbnails.width = height
@@ -51,11 +52,11 @@ navigation.event = function () {
   let cache = null;
   this.interactive = true
   this
-    .on('touchstart', ev => {
+    .on('pointerdown', ev => {
       // ev.stopped = true
       cache = Object.assign({}, ev.data.global)
     })
-    .on('touchend', ev => {
+    .on('pointerup', ev => {
       // ev.stopped = true
       const target = ev.target
       if (target.pluginName === 'sprite') {

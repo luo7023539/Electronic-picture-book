@@ -25,6 +25,7 @@ loader
   .add("assets/widget.json")
   .add("assets/navigation.json")
   .add("assets/record.json")
+  .add("assets/thumbnails.json")
   .add([
     "assets/pic-0.json",
     "assets/pic-1.json"
@@ -80,7 +81,6 @@ loader
   .add([
     "assets/10-1-0.json",
     "assets/10-2-0.json",
-    "assets/10-2-1.json",
     "assets/10-3-0.json",
   ])
   .add([
@@ -143,8 +143,10 @@ function setup() {
 function gameLoop() {
   //Loop this function 60 times per second
   requestAnimationFrame(gameLoop);
-  c.update()
+
+
   TWEEN.update();
+  c.update()
   //Update the current game state
   state();
 

@@ -16,7 +16,7 @@ const Act = new Container()
 Act.quene = []
 
 Act.init = () => {
-  const background = new Sprite(getTexture('backgroud1.png'))
+  const background = new Sprite(getTexture('1/backgroud1.png'))
 
   var richText = createText("有一天，奶奶和我在院子里看月亮\
   我指着月亮说它弯弯地像奶奶的眉毛\
@@ -39,7 +39,7 @@ Act.init = () => {
     "assets/1-6.json",
   ])
 
-  Act.quene.push(action_1)
+  Act.quene.push(action_1, richText)
 
   Act.addChild(
     background,
@@ -50,6 +50,7 @@ Act.init = () => {
 }
 
 Act.play = function () {
+  const { richText }  = Act
   this.quene.forEach(element => {
     if (element.currentFrame === element.totalFrames -1) {
       element.gotoAndPlay(0)
@@ -61,7 +62,7 @@ Act.play = function () {
 
 Act.stop = function () {
   this.quene.forEach(element => {
-    element.stop()
+    element.stop && element.stop()
   });
 }
 

@@ -39,7 +39,16 @@ const getTexture = (textureName) => {
 }
 
 const createText = (text) => {
-  return new PIXI.Text(text , textStyle)
+  const richText = new PIXI.Text(text , textStyle)
+  richText.alpha = 0
+
+  richText.play = function () {
+    new TWEEN.Tween(richText)
+    .to({ alpha: 1 }, 1000)
+    .easing(TWEEN.Easing.Quadratic.InOut)
+    .start()
+  }
+  return richText
 }
 
 const createAnimateSprite = (texture_id) => {

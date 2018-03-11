@@ -69,13 +69,16 @@ stage.event = function () {
     result.timestamp = Date.now()
     return result
   }
-  this.on('touchstart', (ev) => {
+  this.on('pointerdown', (ev) => {
     cache = copyAddtimeStamp(ev.data.global)
   })
 
-  this.on('touchend', (ev) => {
+  this.on('pointerup', (ev) => {
     let o = cache;
     let n = copyAddtimeStamp(ev.data.global);
+    if (!o || !n) {
+      return false
+    }
     let direction = isSlide(o, n)
     if (direction) {
       let visible = navigation.visible

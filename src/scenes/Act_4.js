@@ -14,7 +14,7 @@ Act.quene = []
 
 // 挂载一个初始化场景方法
 Act.init = () => {
-  const background = new Sprite(getTexture('backgroud4.png'))
+  const background = new Sprite(getTexture('4/backgroud4.png'))
   const richText = createText("在家里，我每天自己起床，刷牙，吃饭，帮忙打扫");
   richText.x = 290;
   richText.y = 373;
@@ -27,7 +27,7 @@ Act.init = () => {
     "assets/4-4.json",
   ])
 
-  Act.quene.push(action_1)
+  Act.quene.push(action_1, richText)
   Act.addChild(background,richText, action_1)
 }
 
@@ -43,7 +43,7 @@ Act.play = function () {
 
 Act.stop = function () {
   this.quene.forEach(element => {
-    element.stop()
+    element.stop && element.stop()
   });
 }
 export default Act

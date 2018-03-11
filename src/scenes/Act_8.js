@@ -14,10 +14,12 @@ Act.quene = []
 
 // 挂载一个初始化场景方法
 Act.init = () => {
-  const background = new Sprite(getTexture('backgroud8.png'))
+  const background = new Sprite(getTexture('8/backgroud8.png'))
+  const hand = new Sprite(getTexture('8/8-1.png'))
+
   const richText = createText("可是我知道\
   那双大手为我正在抵挡所有的苦难");
-
+  hand.y = 236
   // richText.width = 500
   richText.x = 166;
   richText.y = 691;
@@ -29,9 +31,9 @@ Act.init = () => {
     "assets/8-3.json",
   ])
 
-  Act.quene.push(action_1)
-
-  Act.addChild(background, action_1, richText)
+  Act.quene.push(action_1, richText)
+  
+  Act.addChild(background, action_1, richText, hand)
 
 }
 
@@ -47,7 +49,7 @@ Act.play = function () {
 
 Act.stop = function () {
   this.quene.forEach(element => {
-    element.stop()
+    element.stop && element.stop()
   });
 }
 

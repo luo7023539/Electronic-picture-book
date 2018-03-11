@@ -44,14 +44,17 @@ widgets.init = function () {
 
 
   const handleLeft = (ev) => {
+    ev.stopped = true
     scene.current--
   }
 
   const handleRight = (ev) => {
+    ev.stopped = true
     scene.current++
   }
 
   const handleStart = (ev) => {
+    ev.stopped = true
     const current_scene = scene._current_scene
     playing()
     current_scene.play()
@@ -66,25 +69,25 @@ widgets.init = function () {
   buttonLeft.buttonMode = true;
   buttonLeft.interactive = true;
   buttonLeft
-    .on('touchend', handleLeft)
+    .on('pointerdown', handleLeft)
 
   buttonRight.buttonMode = true;
   buttonRight.interactive = true;
   buttonRight.x = 408;
   buttonRight
-    .on('touchend', handleRight)
+    .on('pointerdown', handleRight)
 
   start.buttonMode = true;
   start.interactive = true;
   start
-    .on('touchend', handleStart)
+    .on('pointerdown', handleStart)
 
   pause.buttonMode = true;
   pause.interactive = true;
   pause
-    .on('touchend', handlePause)
+    .on('pointerdown', handlePause)
   widgets.interactive = true;
-  widgets.on('touchend', (ev) => {
+  widgets.on('pointerdown', (ev) => {
     ev.stopped = true;
   })
   widgets.addChild(buttonLeft, start, pause, buttonRight)
